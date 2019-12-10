@@ -16,19 +16,20 @@ Contoh:
 - `name` = 'sergei', output: 'Masuk group terakhir'
 
 */
+const assert = require('../assert');
 
-// Code disini
+const definition = require('./002');
 
-function main(name) {
-    if (name[0]=='a'||name[0]=='b'||name[0]=='c'||name[0]=='d') {
-        // console.log(name[0])
-        return 'Masuk group pertama';
-    }
-    else if(name[0]=='e'||name[0]=='f'||name[0]=='g'||name[0]=='h'){
-        return 'Masuk group kedua';
-    } else {
-        return 'Masuk group terakhir'
-    }
+const runTest = () => {
+  const firstGroupResult = 'Masuk group pertama';
+  const secondGroupResult = 'Masuk group kedua';
+  const lastGroupResult = 'Masuk group terakhir';
+
+  assert.strictEqual(definition('dimitri'), firstGroupResult);
+  assert.strictEqual(definition('echa'), secondGroupResult);
+  assert.strictEqual(definition('taufik'), lastGroupResult);
+  assert.strictEqual(definition('sergei'), lastGroupResult);
 }
 
-module.exports = main;
+runTest();
+
