@@ -37,48 +37,27 @@ RULES:
 */
 // var array =['Steve Fox','Jin Kazama','Eddie Gordo', 'Geese Howard']
 
-function addTitle(person1, person2, person3, person4) {
-    // Code disini
-    // person1 = 'Mr'+' '
-    // for(i=0;i<array.length;i++){
-    //   array[i] = 'Mr.' + ' ' + array[i]
-    // }
-    
-    
-    return '';
-}
-// console.log(addTitle('Steve Fox', 'Jin Kazama', 'Eddie Gordo', 'Geese Howard'))
+const assert = require('../assert');
 
-var output=''
-function changeSpacesWith(str, to) {
-    // Code disini
-    for(i=0;i<str.length;i++){
-      if(str[i]===' '){
-        output+= to
-      }
-      else{
-        output+= str[i]
-      }
-    }
-    // console.log(output)
-    
-    return output
-}
-// console.log(changeSpacesWith('Steve Fox','-'))
+const { addTitle, changeSpacesWith, cutString } = require('./003');
 
-var storeStr = ''
-function cutString(str) {
-    // Code disini
-    for(let i = 0 ; i < 6 ; i++){
-      storeStr = storeStr + str[i]
-    }
-    return storeStr
+function runTestAddTitle() {
+  const actual = addTitle('Steve Fox', 'Jin Kazama', 'Eddie Gordo', 'Geese Howard');
+  const expected = 'Mr. Steve Fox, Mr. Jin Kazama, Mr. Eddie Gordo, Mr. Geese Howard';
+  assert.strictEqual(actual, expected);
 }
-// console.log(cutString('Kazuya Mishima'))
-// console.log(cutString('Dimitri W'))
 
-module.exports = {
-  addTitle,
-  changeSpacesWith,
-  cutString
+function runTestChangeSpacesWith() {
+  assert.strictEqual(changeSpacesWith('Steve Fox', '-'), 'Steve-Fox');
+  assert.strictEqual(changeSpacesWith('Sergei Dragunov', '+'), 'Sergei+Dragunov');
 }
+
+function runTestCutString() {
+  assert.strictEqual(cutString('Kazuya Mishima'), 'Kazuya');
+  assert.strictEqual(cutString('Sergei Dragunov'), 'Sergei');
+  assert.strictEqual(cutString('Dimitri W'), 'Dimitr');
+}
+
+runTestAddTitle();
+runTestChangeSpacesWith();
+runTestCutString();
