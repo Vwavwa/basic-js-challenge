@@ -37,42 +37,16 @@ ATURAN CODING:
 //     jika semua lulus tampilkan semua orang lulus
 // tampilkan jumlah orang yang lulus
 
-var countLulus = 0
-var kosong =''
-var nol=''
-var all=''
-var total =0
+const assert = require('assert');
 
-function graduatesCount (scores) {
-    for(i=0;i<=scores.length;i++){
-        if(scores === []){
-            kosong = 'data kosong'
-        }
-    }
-    for(i=0;i<scores.length;i++){
-        if(scores[i] === 0){
-        nol = 'tidak ada yang lulus'
-        }
-    }    
-    for(i=0;i<scores.length;i++){   
-        if(scores[i] >= 75){
-            countLulus = countLulus + 1
-            total = countLulus + ' orang lulus'
-            if(countLulus == scores.length){
-                all = 'semua orang lulus'
-            }
-        }
-    }      
-   return `${kosong} ${nol} ${total} ${all}`
+const graduatesCount = require('./001');
+
+function runTest() {
+  assert.strictEqual(graduatesCount([70, 85, 65, 90]), '2 orang lulus');
+  assert.stringEqual(graduatesCount([0, 65, 30, 74]), 'Tidak ada yang lulus');
+  assert.strictEqual(graduatesCount([90, 100, 76, 85]), 'Semua lulus');
+  assert.strictEqual(graduatesCount([]), 'Data kosong');
 }
 
-// Test cases
+runTest();
 
-// console.log(graduatesCount([76, 77, 30, 80, 10, 20])); // 3 orang lulus
-// console.log(graduatesCount([100, 100, 74, 60, 87])); // 3 orang lulus
-// console.log(graduatesCount([90, 100, 85, 79, 80, 74, 80])); // 6 orang lulus
-// console.log(graduatesCount([100, 100, 100, 85, 90])); // Semua orang lulus
-// console.log(graduatesCount([0, 0, 0, 0, 0])); // Tidak ada yang lulus
-console.log(graduatesCount([])); // Data kosong
-
-module.exports = graduatesCount;
