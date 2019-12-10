@@ -39,19 +39,35 @@ RULES:
 function addTitle(person1, person2, person3, person4) {
     // Code disini
     // addTitle = 'Steve Fox', 'Jin Kazama', 'Eddie Gordo', 'Geese Howard'
-    newStr = []
-    str =[]
-    newStr.push(person1,person2,person3,person4)
-    for(i=0;i< newStr.length;i++){
-      if(str[4] == str.length){
-        str = str + 'Mr. ' + newStr[i]
+    // newStr = []
+    // str =[]
+    // newStr.push(person1,person2,person3,person4)
+    // for(i=0;i< newStr.length;i++){
+    //   if(str[4] === str.length){
+    //     str = str + 'Mr. ' + newStr[i]
+    //   }
+    //   else{
+    //     str = str + 'Mr. ' + newStr[i] +', '
+    //   }
+    // }
+    // // console.log(newStr)
+    // return str;
+    var persons =[person1,person2,person3,person4];
+    var personsWithTitle =[]
+    var personsString =''
+    for(i=0;i<persons.length;i++){
+      // personsWithTitle += 'Mr. ' + persons[i]
+      personsWithTitle.push('Mr. ' + persons[i])
+    }
+    for(j=0;j<persons.length;j++){
+      if(j==personsWithTitle.length-1){
+        personsString += personsWithTitle[j]
       }
       else{
-        str = str + 'Mr. ' + newStr[i] +', '
+        personsString += personsWithTitle[j]+', '
       }
     }
-    // console.log(newStr)
-    return str;
+    return personsString
 }
 console.log(addTitle('Steve Fox', 'Jin Kazama', 'Eddie Gordo', 'Geese Howard'))
 
