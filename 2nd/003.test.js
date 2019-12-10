@@ -27,8 +27,38 @@ ATURAN CODING:
   - .copyWithin()
 */
 
-function arrayMerge (firstData, secondData) {
+const assert = require('../assert');
 
-}
+const arrayMerge = require('./003');
 
-module.exports = arrayMerge;
+(function () {
+  assert.strictEqual(
+    arrayMerge(['king', 'devil jin', 'akuma'], ['eddie', 'steve', 'geese']),
+    ['king', 'devil jin', 'akuma', 'eddie', 'steve', 'geese']
+  );
+
+  assert.strictEqual(
+    arrayMerge(['sergei', 'jin'], ['jin', 'steve', 'bryan']),
+    ['sergei', 'jin', 'steve', 'bryan']
+  );
+
+  assert.strictEqual(
+    arrayMerge(['alisa', 'yoshimitsu'], ['devil jin', 'yoshimitsu', 'alisa', 'law']),
+    ['alisa', 'yoshimitsu', 'devil jin', 'law']
+  );
+
+  assert.strictEqual(
+    arrayMerge([], ['devil jin', 'sergei']),
+    ['devil jin', 'sergei']
+  );
+
+  assert.strictEqual(
+    arrayMerge(['hwoarang'], []),
+    ['hwoarang']
+  );
+
+  assert.strictEqual(
+    arrayMerge([], []),
+    []
+  );
+})();
