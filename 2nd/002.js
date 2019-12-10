@@ -32,7 +32,7 @@ function reverseAll (arr) {
             // console.log(arr.length-1)
     //     }
     // }
-    return arr
+    return
 }
 
 

@@ -30,12 +30,12 @@ const assert = require('../assert');
 const reverseAll = require('./002');
 
 (function runTest() {
-  assert.strictEqual(
+  assert.deepEqual(
     reverseAll(['devil jin', 'geese', 'akuma']),
     ['amuka', 'eseeg', 'nij lived']
   );
 
-  assert.strictEqual(
+  assert.deepEqual(
     reverseAll(['alisa', 'xiaoyu', 'nina', 'lili']),
     ['ilil', 'anin', 'uyoaix', 'asila']
   );

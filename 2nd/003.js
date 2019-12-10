@@ -28,7 +28,9 @@ ATURAN CODING:
 */
 
 function arrayMerge (firstData, secondData) {
+  //Code di sini
 
+  return
 }
 
 module.exports = arrayMerge;

@@ -32,32 +32,32 @@ const assert = require('../assert');
 const arrayMerge = require('./003');
 
 (function () {
-  assert.strictEqual(
+  assert.deepEqual(
     arrayMerge(['king', 'devil jin', 'akuma'], ['eddie', 'steve', 'geese']),
     ['king', 'devil jin', 'akuma', 'eddie', 'steve', 'geese']
   );
 
-  assert.strictEqual(
+  assert.deepEqual(
     arrayMerge(['sergei', 'jin'], ['jin', 'steve', 'bryan']),
     ['sergei', 'jin', 'steve', 'bryan']
   );
 
-  assert.strictEqual(
+  assert.deepEqual(
     arrayMerge(['alisa', 'yoshimitsu'], ['devil jin', 'yoshimitsu', 'alisa', 'law']),
     ['alisa', 'yoshimitsu', 'devil jin', 'law']
   );
 
-  assert.strictEqual(
+  assert.deepEqual(
     arrayMerge([], ['devil jin', 'sergei']),
     ['devil jin', 'sergei']
   );
 
-  assert.strictEqual(
+  assert.deepEqual(
     arrayMerge(['hwoarang'], []),
     ['hwoarang']
   );
 
-  assert.strictEqual(
+  assert.deepEqual(
     arrayMerge([], []),
     []
   );
