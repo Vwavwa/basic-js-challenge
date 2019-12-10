@@ -42,14 +42,24 @@ const assert = require('../assert');
 const { addTitle, changeSpacesWith, cutString } = require('./003');
 
 function runTestAddTitle() {
-  const actual = addTitle('Steve Fox', 'Jin Kazama', 'Eddie Gordo', 'Geese Howard');
-  const expected = 'Mr. Steve Fox, Mr. Jin Kazama, Mr. Eddie Gordo, Mr. Geese Howard';
-  assert.strictEqual(actual, expected);
+  const actual1 = addTitle('Steve Fox', 'Jin Kazama', 'Eddie Gordo', 'Geese Howard');
+  const expected1 = 'Mr. Steve Fox, Mr. Jin Kazama, Mr. Eddie Gordo, Mr. Geese Howard';
+  assert.strictEqual(actual1, expected1);
+
+  const actual2 = addTitle('Jonathan', 'Joseph', 'Jotaro', 'Josuke');
+  const expected2 = 'Mr. Jonathan, Mr. Joseph, Mr. Jotaro, Mr. Josuke';
+  assert.strictEqual(actual2, expected2);
+
+  const actual3 = addTitle('Giorno', 'Buciarrati', 'Narancia', 'Abbachio');
+  const expected3 = 'Mr. Giorno, Mr. Buciarrati, Mr. Narancia, Mr. Abbachio';
+  assert.strictEqual(actual3, expected3);
 }
 
 function runTestChangeSpacesWith() {
   assert.strictEqual(changeSpacesWith('Steve Fox', '-'), 'Steve-Fox');
   assert.strictEqual(changeSpacesWith('Sergei Dragunov', '+'), 'Sergei+Dragunov');
+  assert.strictEqual(changeSpacesWith('Alisa Bosconovich', ''), 'AlisaBosconovich');
+  assert.strictEqual(changeSpacesWith('Kuma', 'x'), 'Kuma');
 }
 
 function runTestCutString() {
