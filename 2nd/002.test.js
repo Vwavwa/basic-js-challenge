@@ -25,21 +25,20 @@ ATURAN CODING:
   - .join()
 */
 
+const assert = require('../assert');
 
-function reverseAll (arr) {
-    // for(i=0; i<arr.length; i++){
-    //     for(j=arr.length-1; j<arr.length; j++){
-            // console.log(arr.length-1)
-    //     }
-    // }
-    return
-}
+const reverseAll = require('./002');
 
+(function runTest() {
+  assert.deepEqual(
+    reverseAll(['devil jin', 'geese', 'akuma']),
+    ['amuka', 'eseeg', 'nij lived']
+  );
 
-console.log(reverseAll(['kira', 'lawliet', 'near', 'mello']));
-// [ 'ollem', 'raen', 'teilwal', 'arik' ]
+  assert.deepEqual(
+    reverseAll(['alisa', 'xiaoyu', 'nina', 'lili']),
+    ['ilil', 'anin', 'uyoaix', 'asila']
+  );
 
-// console.log(reverseAll([]));
-// []
-
-module.exports = reverseAll;
+  assert.strictEqual(reverseAll([]), []);
+})();

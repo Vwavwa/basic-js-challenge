@@ -18,12 +18,21 @@ const success = (actual) => {
 
 const strictEqual = (actual, expected, message) => {
   if (actual !== expected) {
-    fail(actual, expected)
+    fail(actual, expected);
+  } else {
+    success(actual);
+  }
+}
+
+const deepEqual = (actual, expected) => {
+  if (JSON.stringify(actual) !== JSON.stringify(expected)) {
+    fail(actual, expected);
   } else {
     success(actual);
   }
 }
 
 module.exports = {
-  strictEqual
+  strictEqual,
+  deepEqual
 }
