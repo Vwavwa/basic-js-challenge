@@ -26,34 +26,38 @@ ATURAN CODING:
 
 */
 function graduatesCount (scores) {
-var counterPass = 0
-var counterPassResult 
-var notPass=''
-var emptyArray =''
-var allPass =''
+    var counter = 0;
+    if(scores.length==0){
+        return 'Data kosong'
+    }
+    for(i=0;i<scores.length;i++){
+        if(scores[i]>=75){
+            counter += 1
+        }
+    }
+    if(counter === scores.length){
+        return 'Semua lulus'
+    }
+    else if(counter === 0){
+        return 'Tidak ada yang lulus' 
+    }
+     return counter + ' orang lulus'         
+}  
+// buat variabel untuk simpan counter orang yang lulus     
+// jika array kosong 
+// return Data kosong
+// looping for cek array index ke i
+//      bandingkan setiap index
+//      jika array ke i >= 75 
+//      counter tambah 1
+// return
+// jika counter sama dengan jumlah orang 
+// tampilkan semua orang lulus
+// jika counter sama dengan 0 
+// tampilkan tidak ada yang lulus
 
-    
-    for(i=0;i<=scores.length;i++){
-    
-        if(scores == emptyArray){
-            emptyArray = 'Data kosong'
-        }
-        else if(scores[i] < 75){
-            notPass = 'Tidak ada yang lulus'
-        }
-        else if(scores[i] >= 75){
-            allPass = 'Semua lulus'
-        }
-       
-        
-        
-    }   
-    
-        
-        
-    
-    return `${emptyArray}${notPass}${allPass}`
-}
+//     return `${emptyArray}${notPass}${allPass}`
+// }
 
 // Test cases
 

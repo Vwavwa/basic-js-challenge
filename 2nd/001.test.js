@@ -37,13 +37,13 @@ ATURAN CODING:
 //     jika semua lulus tampilkan semua orang lulus
 // tampilkan jumlah orang yang lulus
 
-const assert = require('assert');
+const assert = require('../assert');
 
 const graduatesCount = require('./001');
 
 function runTest() {
   assert.strictEqual(graduatesCount([70, 85, 65, 90]), '2 orang lulus');
-  assert.stringEqual(graduatesCount([0, 65, 30, 74]), 'Tidak ada yang lulus');
+  assert.strictEqual(graduatesCount([0, 65, 30, 74]), 'Tidak ada yang lulus');
   assert.strictEqual(graduatesCount([90, 100, 76, 85]), 'Semua lulus');
   assert.strictEqual(graduatesCount([]), 'Data kosong');
 }
