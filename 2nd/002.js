@@ -42,18 +42,23 @@ function reverseAll (arr) {
     var stringNames = arr.toString();
     var stringReverse ='';
     var arrayResult =[];
-    for(i=stringNames.length-1;i>=0;i--){
-        if(stringNames[i]===','){
-            arrayResult.push(stringReverse)
-            stringReverse =''
-        }
-        else{
-            stringReverse+=stringNames[i]
-        }
-            
+    if(arr.length === 0){
+        return arrayResult
     }
-    arrayResult.push(stringReverse)
-    return arrayResult
+    else{
+        for(i=stringNames.length-1;i>=0;i--){
+        if(stringNames[i]===','){
+                arrayResult.push(stringReverse)
+                stringReverse =''
+            }
+            else{
+                stringReverse+=stringNames[i]
+            }
+                
+        }
+        arrayResult.push(stringReverse)
+        return arrayResult
+    }
 }
 
 
