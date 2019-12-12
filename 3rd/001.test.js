@@ -26,9 +26,33 @@ output: [[0], [0]]
 - Dilarang menggunakan sintaks eval()!
 */
 
-function addEvenOdd (arrNum) {
-  //Coding di sini
-  return;
-}
+const assert = require('../assert');
 
-module.exports = addEvenOdd
+const addEvenOdd = require('./001');
+
+(function() {
+  assert.deepEqual(
+    addEvenOdd([3, 5, 7, 8]),
+    [ [15], [8] ]
+  );
+
+  assert.deepEqual(
+    addEvenOdd([2, 4, 6, 10]),
+    [ [0], [22] ]
+  );
+
+  assert.deepEqual(
+    addEvenOdd([-1, -2, -3, -4]),
+    [ [-4], [-6] ]
+  );
+
+  assert.deepEqual(
+    addEvenOdd([0, 0]),
+    [ [0], [0] ]
+  );
+
+  assert.deepEqual(
+    addEvenOdd([]),
+    [ [0], [0] ]
+  );
+})();
