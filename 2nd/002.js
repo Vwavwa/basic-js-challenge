@@ -24,19 +24,40 @@ ATURAN CODING:
   - .split()
   - .join()
 */
+// array diubah ke string 
+// simpan ke dalam satu variabel
+// buat variabel untuk menyimpan string yang akan di reverse
+// buat variabel penampung array
+//     looping setiap elemen 
+//         dapatkan elemen terakhir dari indeks 
+//         jika di dalam string terdapat koma,jalankan program dibawah
+//         push string sebelum koma tersebut ke array              
+//         variabel penyimpan string di assign nilai kosong
+//         jika tidak ada koma
+//              simpan elemen terakhir tersebut ke variabel yang dibuat
+//     return array yang telah menyimpan hasil reverse
 
 
 function reverseAll (arr) {
-    // for(i=0; i<arr.length; i++){
-    //     for(j=arr.length-1; j<arr.length; j++){
-            // console.log(arr.length-1)
-    //     }
-    // }
-    return
+    var stringNames = arr.toString();
+    var stringReverse ='';
+    var arrayResult =[];
+    for(i=stringNames.length-1;i>=0;i--){
+        if(stringNames[i]===','){
+            arrayResult.push(stringReverse)
+            stringReverse =''
+        }
+        else{
+            stringReverse+=stringNames[i]
+        }
+            
+    }
+    arrayResult.push(stringReverse)
+    return arrayResult
 }
 
 
-console.log(reverseAll(['kira', 'lawliet', 'near', 'mello']));
+// console.log(reverseAll(['kira', 'lawliet', 'near', 'mello']));
 // [ 'ollem', 'raen', 'teilwal', 'arik' ]
 
 // console.log(reverseAll([]));
