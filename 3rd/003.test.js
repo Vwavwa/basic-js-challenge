@@ -41,22 +41,30 @@ output: []
 
 */
 
-function kali(operand1, operand2) {
+const assert = require('../assert');
 
-}
-function tambah(operand1, operand2) {
+const { calculate } = require('./003');
 
-}
-function kurang(operand1, operand2) {
+(function() {
+  const input1 = [
+    { operand1: 5, operand2: 10, operator: '*' }, 
+    { operand1: 3, operand2: 10, operator: '-'}
+  ];
+  assert.deepEqual(calculate(input1), [50, -7]);
 
-}
-function bagi(operand1, operand2) {
+  const input2 = [
+    { operand1: 10, operand2: 5, operator: '/' }, 
+    { operand1: 3, operand2: 10, operator: '+'}
+  ];
+  assert.deepEqual(calculate(input2), [2, 13]);
 
-}
-function calculate(arrNumber) {
-  return ;
-}
+  const input3 = [
+    { operand1: 23.62, operand2: 103.2, operator: '+' },
+    { operand1: 1647, operand2: -302, operator: '-' },
+    { operand1: 32.8, operand2: -10, operator: '*' },
+    { operand1: -144, operand2: 8, operator: '/' }
+  ];
+  assert.deepEqual(calculate(input3), [126.82, 1949, -328, -18]);
 
-module.exports = {
-  calculate
-}
+  assert.deepEqual(calculate([]), []);
+})();
