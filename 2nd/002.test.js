@@ -40,5 +40,5 @@ const reverseAll = require('./002');
     ['ilil', 'anin', 'uyoaix', 'asila']
   );
 
-  assert.strictEqual(reverseAll([]), []);
+  assert.deepEqual(reverseAll([]), []);
 })();
