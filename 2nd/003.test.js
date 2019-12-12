@@ -46,6 +46,11 @@ const arrayMerge = require('./003');
     arrayMerge(['alisa', 'yoshimitsu'], ['devil jin', 'yoshimitsu', 'alisa', 'law']),
     ['alisa', 'yoshimitsu', 'devil jin', 'law']
   );
+  
+  assert.deepEqual(
+    arrayMerge(['baldur', 'thor', 'loki'], ['loki, thor, baldur']),
+    ['baldur, thor, loki']
+  );
 
   assert.deepEqual(
     arrayMerge([], ['devil jin', 'sergei']),
@@ -54,6 +59,11 @@ const arrayMerge = require('./003');
 
   assert.deepEqual(
     arrayMerge(['hwoarang'], []),
+    ['hwoarang']
+  );
+
+  assert.deepEqual(
+    arrayMerge([], ['hwoarang']),
     ['hwoarang']
   );
 
