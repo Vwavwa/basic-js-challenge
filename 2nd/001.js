@@ -25,46 +25,39 @@ ATURAN CODING:
   - .reduce()
 
 */
-// buat variabel untuk menghitung jumlah kelulusan
-// lakukan perulangan untuk menentukan index yang akan di bandingkan
-//     jika array kosong tampilkan data kosong
-// lakukan perulangan untuk menentukan index yang akan di bandingkan
-//     jika array isi 0 tampilkan tidak ada yang lulus
-// lakukan perulangan untuk menentukan index yang akan di bandingkan
-//     bandingkan setiap array,jika array ke i  > atau = 75,  
-//     hitung kelulusan + 1
-//     bandingkan jumlah kelulusan dengan panjang string
-//     jika semua lulus tampilkan semua orang lulus
-// tampilkan jumlah orang yang lulus
-
-var countLulus = 0
-var kosong =''
-var nol=''
-var all=''
-var total =0
-
 function graduatesCount (scores) {
-    for(i=0;i<=scores.length;i++){
-        if(scores === []){
-            kosong = 'data kosong'
-        }
+    var counter = 0;
+    if(scores.length==0){
+        return 'Data kosong'
     }
     for(i=0;i<scores.length;i++){
-        if(scores[i] === 0){
-        nol = 'tidak ada yang lulus'
+        if(scores[i]>=75){
+            counter += 1
         }
-    }    
-    for(i=0;i<scores.length;i++){   
-        if(scores[i] >= 75){
-            countLulus = countLulus + 1
-            total = countLulus + ' orang lulus'
-            if(countLulus == scores.length){
-                all = 'semua orang lulus'
-            }
-        }
-    }      
-   return `${kosong} ${nol} ${total} ${all}`
-}
+    }
+    if(counter === scores.length){
+        return 'Semua lulus'
+    }
+    else if(counter === 0){
+        return 'Tidak ada yang lulus' 
+    }
+     return counter + ' orang lulus'         
+}  
+// buat variabel untuk simpan counter orang yang lulus     
+// jika array kosong 
+// return Data kosong
+// looping for cek array index ke i
+//      bandingkan setiap index
+//      jika array ke i >= 75 
+//      counter tambah 1
+// return
+// jika counter sama dengan jumlah orang 
+// tampilkan semua orang lulus
+// jika counter sama dengan 0 
+// tampilkan tidak ada yang lulus
+
+//     return `${emptyArray}${notPass}${allPass}`
+// }
 
 // Test cases
 
@@ -72,7 +65,7 @@ function graduatesCount (scores) {
 // console.log(graduatesCount([100, 100, 74, 60, 87])); // 3 orang lulus
 // console.log(graduatesCount([90, 100, 85, 79, 80, 74, 80])); // 6 orang lulus
 // console.log(graduatesCount([100, 100, 100, 85, 90])); // Semua orang lulus
-// console.log(graduatesCount([0, 0, 0, 0, 0])); // Tidak ada yang lulus
-console.log(graduatesCount([])); // Data kosong
+// console.log(graduatesCount([0, 67, 34, 0, 23])); // Tidak ada yang lulus
+// console.log(graduatesCount([])); // Data kosong
 
 module.exports = graduatesCount;

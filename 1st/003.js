@@ -38,20 +38,7 @@ RULES:
 
 function addTitle(person1, person2, person3, person4) {
     // Code disini
-    // addTitle = 'Steve Fox', 'Jin Kazama', 'Eddie Gordo', 'Geese Howard'
-    // newStr = []
-    // str =[]
-    // newStr.push(person1,person2,person3,person4)
-    // for(i=0;i< newStr.length;i++){
-    //   if(str[4] === str.length){
-    //     str = str + 'Mr. ' + newStr[i]
-    //   }
-    //   else{
-    //     str = str + 'Mr. ' + newStr[i] +', '
-    //   }
-    // }
-    // // console.log(newStr)
-    // return str;
+    
     var persons =[person1,person2,person3,person4];
     var personsWithTitle =[]
     var personsString =''
@@ -69,7 +56,7 @@ function addTitle(person1, person2, person3, person4) {
     }
     return personsString
 }
-console.log(addTitle('Steve Fox', 'Jin Kazama', 'Eddie Gordo', 'Geese Howard'))
+
 
 function changeSpacesWith(str, to) {
 var output=''
