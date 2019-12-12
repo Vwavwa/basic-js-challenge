@@ -28,8 +28,39 @@ ex: Mr. *****, Mrs. *****, Ms. *****, Mr. *****
 
 */
 
-function addTitle (people) {
-  return ;
-}
+const assert = require('../assert');
 
-module.exports = addTitle;
+const addTitle = require('./002');
+
+(function() {
+  assert.deepEqual(
+    addTitle([
+      ['Sergei', 'male', true],
+      ['Alyona', 'female', false]
+    ]),
+    [ 'Mr. Sergei', 'Ms. Alyona' ]
+  );
+
+  assert.deepEqual(
+    addTitle([
+      ['Dimitri', 'male', false],
+      ['Anastasia', 'female', false],
+      ['Vladlena', 'female', true]
+    ]),
+    ['Mr. Dimitri', 'Ms. Anastasia', 'Mrs. Vladlena']
+  );
+
+  assert.deepEqual(
+    addTitle([
+      ['Joichiro', 'male', true],
+      ['Erina', 'female', false],
+      ['Akira', 'male', false],
+      ['Leonora', 'female', true]
+    ]),
+    ['Mr. Joichiro', 'Ms. Erina', 'Mr. Akira', 'Mrs. Leonora']
+  )
+
+  assert.deepEqual(addTitle([]), 'No data');
+
+  assert.deepEqual(addTitle(), 'No data');
+})();
