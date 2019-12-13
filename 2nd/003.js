@@ -25,12 +25,38 @@ ATURAN CODING:
   - .concat()
   - .indexOf() / .lastIndexOf() / .includes()
   - .copyWithin()
-*/
+*/ 
+// buat variabel untuk menampung array result
+// jika firstData dan secondData kosong
+//   push array yang ada ke array result
+// jika tidak
+// looping setiap elemen  firstData
+//   push setiap elemen pada array firstData di result
+// looping kedua untuk elemen secondData
+//   jika elemen array secondData tidak sama dengan setiap elemen di array result
+//   push elemen secondData tersebut
+// kembalikan nilai array result 
 
-function arrayMerge (firstData, secondData) {
-  //Code di sini
+function arrayMerge(firstData, secondData) {
+//Code di sini
+  var result =[]
 
-  return
+  if(arrayMerge.length === 0){
+    result.push()
+  }
+  else{
+    for(j=0;j<firstData.length;j++){
+      result.push(firstData[j])
+    }
+    for(i=0;i<secondData.length;i++){
+      if(secondData[i] != result[0] && secondData[i] != result[1] && secondData[i] != result[2]){
+        result.push(secondData[i])
+      }    
+    }
+  }  
+  return result
 }
-
+console.log(arrayMerge(['baldur', 'thor', 'loki'], ['loki, thor, baldur']))
+// console.log(arrayMerge(['hwoarang'], []))
+// console.log(arrayMerge([], []))
 module.exports = arrayMerge;
