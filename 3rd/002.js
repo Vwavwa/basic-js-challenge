@@ -29,7 +29,33 @@ ex: Mr. *****, Mrs. *****, Ms. *****, Mr. *****
 */
 
 function addTitle (people) {
-  return ;
+
+  //declare satu variable untuk store result
+  var result = []
+  
+  if(!people || people.length == 0) {
+    return 'No data'
+  }
+  
+  //looping untuk menmbahkan title pada setiap elemen
+  for(let i = 0; i < people.length; i++) {
+    
+    //jika male tambahkan  'Mr. ', 
+    if(people[i][1] === 'male'){
+      result.push('Mr. ' + people[i][0])
+    }
+
+    //jika female & false tambahkan 'Ms.' 
+    if(people[i][1] === 'female' && people[i][2] === false) {
+      result.push('Ms. ' + people[i][0])
+    }
+    
+    //dan jika female & true tambahkan 'Mrs. '
+    if(people[i][1] === 'female' && people[i][2] === true) {
+      result.push('Mrs. ' + people[i][0])
+    }
+  }
+  return result
 }
 
 module.exports = addTitle;
