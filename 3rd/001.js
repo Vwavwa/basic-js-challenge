@@ -28,7 +28,38 @@ output: [[0], [0]]
 
 function addEvenOdd (arrNum) {
   //Coding di sini
-  return;
+  
+  //create variable to store the calculate number
+  var odd = 0
+  var even = 0
+
+  //create variable to push the result 
+  const evenResult = []
+  const oddResult = []
+  const result =[]
+
+  //loop over the arrNum to find odd or even number
+  //if odd number, add by odd
+  for(let i = 0; i < arrNum.length ; i++) {
+    if(arrNum[i] % 2 === 0) {
+      odd += arrNum[i]
+    }
+    
+    //if even number, add by even
+    else {
+      even += arrNum[i]
+    }
+  }
+  //push calculate result to array oddResult and evenResult
+  oddResult.push(odd)
+  evenResult.push(even)
+
+  //push array evenResult and oddResult to array result
+  result.push(evenResult)
+  result.push(oddResult)
+
+
+  return result;
 }
 
 module.exports = addEvenOdd
