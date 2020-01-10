@@ -41,6 +41,7 @@ output: []
 
 */
 
+
 function kali(operand1, operand2) {
 
 }
@@ -52,9 +53,6 @@ function kurang(operand1, operand2) {
 }
 function bagi(operand1, operand2) {
 
-}
-function calculate(arrNumber) {
-  return ;
 }
 
 module.exports = {
