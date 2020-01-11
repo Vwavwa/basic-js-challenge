@@ -26,8 +26,26 @@ Maka akan mengembalikan 4 karena bisa membeli oleh-oleh dengan harga 5000, 10000
 
 function howManyGifts(maxBudget, gifts){
   
+  // deklarasi satu variable untuk counter jumlah yang bisa di belanja
+  // sort array gifts  
+  // looping array gift
+    // if maxBudget > gift ke indeks
+    // maxBudget = maxBudget - gift ke indeks
+      // counter = counter + 1
+  // return    
+  var counter = 0
+  gifts.sort(function(a, b){return a-b});
+  for(let i = 0; i < gifts.length; i++) {
+    if(maxBudget >= gifts[i]){
+      maxBudget -= gifts[i]
+      counter += 1
+    }
+  }
+  return counter
+  
 }
 
+// console.log(gifts,'<==== ini yang sudah di sort')
 console.log(howManyGifts(30000, [15000, 12000, 5000, 3000, 10000])); // 4
 console.log(howManyGifts(10000, [2000, 2000, 3000, 1000, 2000, 10000])); // 5
 console.log(howManyGifts(4000, [7500, 1500, 2000, 3000])); // 2
