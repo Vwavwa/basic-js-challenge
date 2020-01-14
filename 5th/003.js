@@ -23,7 +23,18 @@
 
 function countMe(names) {
   //your code here
- 
+  let result = {}
+  for (let i = 0; i < names.length; i++) {
+    for (let j = 0; j < names[i].length; j++) {
+      if (result[names[i][j]] === undefined) {
+        result[names[i][j]] = 0
+        result[names[i][j]] += 1
+      } else {
+        result[names[i][j]] += 1
+      }
+    }
+  }
+  return result
 }
 
 console.log(countMe(['dimitri', 'awtian', 'icha']));
