@@ -19,7 +19,15 @@ DILARANG menggunakan built in function .split dan .join
 
 function translate(sentence) {
   // your code here
-  
+  output = ''
+  for (let i = 0; i < sentence.length; i++) {
+    if (sentence[i] === '#') {
+      output += ' '
+    } else {
+      output += sentence[i]
+    }
+  }
+  return output
 }
 
 //TEST CASES
