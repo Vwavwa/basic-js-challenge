@@ -25,6 +25,50 @@ Let's start our own wizardy, shall we?
 
 function whosTheWinner(goals) {
   // your code here 
+  /*
+    jika array kosong
+    tampilkan "Draw, pertandingan akan dilanjutkan dengan penalty kick!"
+    declare variable untuk counter slytherin
+    declare variable untuk counter gryffindor
+    looping array goals
+      jika array ke index = slytherin
+        counter slytherin ditambah 1
+      selain itu jika array ke index = gryffindor
+        counter gryffindor ditambah 1
+    jika counter slytherin > gryffindor
+      tampilkan "Slytherin Juara Futsal Hogwarts 2018"
+    selain itu jika counter gryffindor > slytherin
+      tampilkan "Gryffindor Juara Futsal Hogwarts 2018"
+    selain itu 
+      tampilkan "Draw, pertandingan akan dilanjutkan dengan penalty kick!"
+  */
+
+  if (goals.length === null) {
+    return "Draw, pertandingan akan dilanjutkan dengan penalty kick!"
+  }
+
+  let countSlytherin = 0;
+  let countGryffindor = 0;
+
+  for (let i = 0; i < goals.length; i++) {
+    if (goals[i] === "Slytherin") {
+      countSlytherin += 1
+
+    } else if (goals[i] === "Gryffindor") {
+      countGryffindor += 1
+    }
+  }
+  
+  if (countSlytherin > countGryffindor) {
+    return 'Slytherin Juara Futsal Hogwarts 2018'
+
+  } else if (countGryffindor > countSlytherin) {
+    return "Gryffindor Juara Futsal Hogwarts 2018"
+
+  } else {
+    return "Draw, pertandingan akan dilanjutkan dengan penalty kick!"
+  }
+ 
 }
 
 // TEST CASES
