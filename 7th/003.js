@@ -27,16 +27,35 @@ Function tersebut akan mendapatkan sisa bagi num1 dengan num2 dan mereturn sisa 
   input: remainder(7, 3)
   output: 1
 */
+console.log('========== nomor 1 ==========')
 
 function mergeStrings(str1, str2, str3, str4) {
-  
+
+  return `${str1}-${str2}-${str3}-${str4}`
+}
+console.log(mergeStrings('hello', 'world', 'nice', 'day'))
+
+console.log('========== nomor 2 ==========')
+
+function evenSiblings(number) {
+  for (let i = 1; i <= number; i++) {
+    if (i % 2 == 0) {
+      console.log(i)
+    }
+  }
+
 }
 
-evenSiblings(15);
+evenSiblings(10);
 
-// function remainder (num1, num2) {
-//   // hanya code disini
-// }
+console.log('========== nomor 3 ==========')
 
-// remainder(7,3);
+function remainder(num1, num2) {
+  // hanya code disini
+  let result;
+  result = num1 % num2
 
+  return result
+}
+
+console.log(remainder(8, 2))
