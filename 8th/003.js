@@ -35,7 +35,19 @@
 
 function numberArrayOperation(arr) {
   // your code here
-  
+  result = 0;
+  for (let i = 0; i < arr.length; i++){
+    if(arr[i] % 2 === 1 && arr[i] % 3 !== 0){
+      result += arr[i] * 4
+    }
+    else if(arr[i] % 2 === 0 && arr[i] % 3 !== 0){
+      result += arr[i] * 3
+    }
+    else if(arr[i] % 3 === 0){
+      result += arr[i] * 5
+    }
+  }
+  return result
 }
 
 console.log(numberArrayOperation([ 22, 4, 5, 9, 44, 8, 12, 23 ])); // 451
