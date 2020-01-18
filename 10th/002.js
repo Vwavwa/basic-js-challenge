@@ -23,7 +23,25 @@ output: []
 */
 
 function pairUp(student) {
-   
+    let result = []
+    // let temp = student[0] + ' dan ' + student[1]
+    // result.push(temp)
+    let temp;
+
+    for (let i = 0; i < student.length; i++) {
+        if (i % 2 == 0 && i != student[i].length - 1) {
+            temp = student[i] + ' dan ' + student[i + 1]
+            result.push(temp)
+        } else if (student[i + 1] == null && i == student[i].length-1 ) {
+            temp = student[i] + ' dan Instruktur'
+            result.push(temp)
+        }
+    }
+    return result
 }
 
+
+
 console.log(pairUp(['Budi', 'Badu', 'Indra', 'Indri']))
+console.log(pairUp(['Budi', 'Badu', 'Indra', 'Indri', 'James']))
+console.log(pairUp(['Mario', 'Dion', 'Budi', 'Badu', 'Bota', 'James', 'Atik']))
