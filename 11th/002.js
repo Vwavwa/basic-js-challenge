@@ -22,6 +22,24 @@ Note:
 function loketPelayan(nomorUrut) {
   // Your codes here.
   
+  switch(nomorUrut){
+    case 1: {(nomorUrut = 'Layanan Loket A');break;}
+    case 2: {(nomorUrut = 'Layanan Loket B');break;}
+    case 3: {(nomorUrut = 'Layanan Loket C');break;}
+    case 4: {(nomorUrut = 'Layanan Loket A');break;}
+    case 5: {(nomorUrut = 'Layanan Loket B');break;}
+    case 6: {(nomorUrut = 'Layanan Loket C');break;}
+    case 7: {(nomorUrut = 'Layanan Loket A');break;}
+    case 8: {(nomorUrut = 'Layanan Loket B');break;}
+    case 9: {(nomorUrut = 'Layanan Loket C');break;}
+    case 10: {(nomorUrut = 'Layanan Loket A');break;}
+    case 11: {(nomorUrut = 'Layanan Loket B');break;}
+    case 12: {(nomorUrut = 'Layanan Loket C');break;}
+    default: {
+      (nomorUrut = 'Nomor antrian invalid');
+    }
+  }
+  return nomorUrut
 }
 
 console.log(loketPelayan(1)); // Layanan Loket A
