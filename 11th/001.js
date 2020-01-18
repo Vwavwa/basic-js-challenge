@@ -1,3 +1,4 @@
+/*
 Competencies: Pseudocode
 
 Buatlah Pseudocode untuk kasus berikut:
@@ -10,4 +11,17 @@ Perahu tersebut dipengaruhi oleh kecepatan ombak yang berlawanan dengan arah lai
 - Jika ombak lebih tinggi daripada 2 meter maka perahu akan terbalik, sehingga kecepatan menjadi 0km/jam
 
 Tampilkan kecepatan perahu jika di depan ada ombak setinggi x meter
+*/
 
+/*
+store kecepatan dengan nilai 30
+buat variable untuk menyimpan kecepatan akhir setelah ombak
+if ombak = 1 meter 
+    kecepatanAkhir = kecepatan - 7
+else if ombak = 2 meter 
+    kecepatanAKhir = kecepatan - 15
+else if  ombak > 2 meter    
+    kecepataAkhir = 0
+else if ombak < 1 meter
+    kecepatanAkhir = kecepatan
+*/
