@@ -18,7 +18,17 @@ Contoh:
 
 function csvToObject (keys, values) {
   // write your code here
-   
+  var splitKeys = []
+  var splitValues = []
+  splitKeys = keys.split(',')
+  splitValues = values.split(',')
+  
+  let result = {}
+  for(let i = 0; i < splitKeys.length; i++) {
+    result[splitKeys[i]] = splitValues[i]
+  }
+  return result
+  // console.log(splitKeys,splitValues)
 }
 
 console.log(csvToObject('name,phoneNumber', 'Dimitri,+666123654'));
