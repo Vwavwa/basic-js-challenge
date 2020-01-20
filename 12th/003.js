@@ -17,7 +17,18 @@
 */
 
 function arrSlice ( arr, min, max ) {
-   
+  // buat variable baru untuk store hasil dengan nama result
+  // looping untuk array
+    // jika i >= min dan i < max
+      // push array ke index tersebut
+
+  result = []
+  for(let i = 0; i < arr.length; i++) {
+    if(i >= min && i < max) {
+      result.push(arr[i])
+    }
+  }
+  return result
 }
 
 console.log(arrSlice([7, 4, 3, 2, 1, 2, 1], 4, 7)) // [ 1, 2, 1 ]
@@ -25,3 +36,4 @@ console.log(arrSlice([1, 4, 0, 4, 5], 1, 3)) // [ 4, 0 ]
 console.log(arrSlice([1, 2, 3, 4, 5], 0, 1)) // [ 1 ]
 console.log(arrSlice([5, 4, 3, 2, 1], 0, 2)) // [ 5, 4 ]
 console.log(arrSlice([1, 2, 3, 4, 5], 2, 4)) // [ 3, 4]
+
