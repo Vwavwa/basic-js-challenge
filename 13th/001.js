@@ -14,10 +14,26 @@ Contoh ada pada test case.
 - Wajib menyertakan pseudocode atau algorithma!
 - Dilarang menggunakan sintaks .map()! 
 */
-
+/*
+  buat variable result dengan tipe array untuk store hasil
+  looping setiap array
+    jika title[0] = ','
+      tambah title
+    jika tidak 
+    tambahkan di depan dan pisahkan dengan spasi
+*/
 function titleGivers (targetArr, title) {
   // write your code here
-   
+  result = [];
+  for(let i = 0; i < targetArr.length; i++) {
+    if(title[0] === ',') {
+      result.push(targetArr[i] + title)
+    }
+    else {
+      result.push(title +' '+ targetArr[i])
+    }
+  }
+  return result
 }
 
 console.log(titleGivers (['Awtian Akbar', 'Kobayakawa Sena', 'Yoichi Hiruma'], 'Mr.')); 
