@@ -30,4 +30,13 @@ Wajib menggunakan looping!
 
 // SKELETON CODE (Code Sample)
  
+var height = 5
+result = ''
+
+for(let i = height; i > 0; i--) {
+    for(let j = i; j > 0; j--) {
+        result += j
+    }
+    console.log(result)
+    result = ''
 }
