@@ -17,35 +17,42 @@ output: ['i', 'am', 'so', 'amazed']
 */
 
 /*
-STORE `sentence` with any string
-STORE `tampil` with any string
-STORE `a` with 0
-WHILE `a` less than LENGTH OF `sentence` DO
-  IF `sentence[a]` equal ' '
-    DO SET `tampil` with `tampil` + `, '`
-  ELSE
-    DO SET `tampil` with `tampil` + `sentence`
-DISPLAY `['` + `tampil` + `']`;
+buat sebuah variale untuk menampung array dengan nama result
+buat sebuah variable temp untuk menyimpan kata
+cek jika input = string kosong
+return result
+looping setiap string
+    jika index bukan spasi 
+      temp + sentence ke index
+    selain itu jika sentence ke index adalah spasi
+      push tempt ke result
+      set temp ke string kosong lagi
+push temp ke result - ini untuk push hasil kata terakhir
 */
 
-// function breakSentence(sentence) {
-//   var tampil = '';
-//   for(var a = 0; a < sentence.length; a++) {
-//     if(sentence[a] == ' ') {
-//       tampil = tampil + '\', \'';
-//     } else {
-//       tampil = tampil + sentence[a];
-//     }
-//   }
-//   return '[\'' + tampil + '\']';
-// }
+
 
 function breakSentence(sentence) {
-   
+  let result = [];
+  let temp = '';
+  if(sentence == '') {
+    return result
+  }
+  for (let i = 0; i < sentence.length; i++) {
+    if (sentence[i] != ' ') {
+      temp += sentence[i]
+    }
+    else if(sentence[i] == ' ') {
+      result.push(temp)
+      temp = ''
+    }
+  }
+  result.push(temp)
+  return result
 }
 
 console.log(breakSentence('I am so amazed')); // ['I', 'am', 'so', 'amazed' ]
 console.log(breakSentence('do something')); // ['do', 'something']
 console.log(breakSentence('week3 is so easy')); // ['week3', 'is', 'so', 'easy']
 console.log(breakSentence('I can do this with my eyes closed')); // ['I', 'can', 'do', 'this', with', 'my', 'eyes', 'closed']
-console.log(breakSentence('')); // ['I', 'can', 'do', 'this', with', 'my', 'eyes', 'closed']
+console.log(breakSentence('')); // []
