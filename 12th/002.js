@@ -42,9 +42,16 @@ OUTPUT:
 */
 
 function printBranch(branches) {
- let month  = ['jan', 'feb', 'march', 'april', 'mei', 'jun', 'jul', 'augst', 'sept', 'oct', 'nov', 'dec'];
-
-  
+  let result = ''
+  let month  = ['jan', 'feb', 'march', 'april', 'mei', 'jun', 'jul', 'augst', 'sept', 'oct', 'nov', 'dec'];
+  for(let i = 0; i < month.length; i++) {
+    result += '/ ' + month[i] + ' /';
+    for (let j = 0; j < branches.length; j++) {
+      result += ' Branch-'+ (j+1) + ' IN: ' + branches[j][0][i] + ' / OUT: ' + branches[j][1][i] + ' /'
+    } 
+    result += '\n'
+  }
+  return result
 }
  
 //TEST CASE 1
