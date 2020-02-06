@@ -25,6 +25,17 @@ Examples:
 */
 function matrixTranspose(matriks) {
   // write your code here
+  let result = []
+  for(let x = 0; x < matriks[0].length; x++) {
+    result.push([])
+  }
+  for(let i = 0; i < matriks.length; i++) {
+    for(let j = 0; j < matriks[0].length; j++) {
+      result[j].push(matriks[i][j])
+    }
+  }
+  return result
+  
   
 }
 
@@ -84,3 +95,4 @@ console.log(matrixTranspose([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
       [3, 6, 9]
     ]
 */
+
