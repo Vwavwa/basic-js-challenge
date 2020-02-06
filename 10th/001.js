@@ -28,30 +28,40 @@ RULES:
   - Wajib menuliskan pseudocode. Tidak ada pseudocode / pseudocode tidak match
     dengan kode maka indikasi soal tidak diselesaikan secara pribadi dan tidak akan dinilai.
 */
-
 /*
-STORE `str` with any string
-STORE `tampil` with any string
-STORE `a` with 0
-WHILE `a` less than LENGTH OF `str` DO
-  IF `srt[a]` equal 1
-    DO SET `tampil` with `tampil` + `i`
-  ELSE IF `srt[a]` equal 4
-    DO SET `tampil` with `tampil` + `a`
-  ELSE IF `srt[a]` equal 3
-    DO SET `tampil` with `tampil` + `e`
-  ELSE IF `srt[a]` equal 7
-    DO SET `tampil` with `tampil` + `u`
-  ELSE IF `srt[a]` equal 0
-    DO SET `tampil` with `tampil` + `o`
-  ELSE
-    DO SET `tampil` with `tampil` + `str[a]`
-DISPLAY `tampil`
+  declare satu variable result untuk store string
+  looping str
+    jika index = '1'
+      result di tambah string 'i'
+      selain itu jika index ='4'
+        result di tambah string 'a'
+      selain itu jika index ='3'
+        result di tambah string 'e'
+      selain itu jika index ='7'
+        result di tambah string 'u'
+      selain itu jika index ='0'
+        result di tambah string 'o'
+      selain itu 
+        result di tambah dengan str  
 */
-
-
-function numberLetters (str) {
-   
+function numberLetters(str) {
+  let result = '';
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] == '1') {
+      result += 'i'
+    } else if (str[i] == '4') {
+      result += 'a'
+    } else if (str[i] == '3') {
+      result += 'e'
+    } else if (str[i] == '7') {
+      result += 'u'
+    } else if (str[i] == '0') {
+      result += 'o'
+    } else {
+      result += str[i]
+    }
+  }
+  return result
 }
 
 // Test cases
