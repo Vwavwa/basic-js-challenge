@@ -37,24 +37,36 @@ ATURAN CODING:
 //   push elemen secondData tersebut
 // kembalikan nilai array result 
 
-function arrayMerge(firstData, secondData) {
-//Code di sini
-  var result =[]
+function arrayMerge (firstData, secondData) {
+  //Code di sini
+  const result = [];
 
-  if(arrayMerge.length === 0){
-    result.push()
+  // loop over the firstData,
+  // and push all the elements into the result array
+  for (let i = 0; i < firstData.length; i++) {
+    result.push(firstData[i]);
   }
-  else{
-    for(j=0;j<firstData.length;j++){
-      result.push(firstData[j])
+
+  // loop over the secondData
+  for (let i = 0; i < secondData.length; i++) {
+    
+    // loop over the result array to find the element of secondData
+    // that the firstData already have
+    // if it is found, flag the isExist variable to true
+    let isExist = false;
+    for (let j = 0; j < result.length; j++) {
+      if (result[j] === secondData[i]) {
+        isExist = true;
+      }
     }
-    for(i=0;i<secondData.length;i++){
-      if(secondData[i] != result[0] && secondData[i] != result[1] && secondData[i] != result[2]){
-        result.push(secondData[i])
-      }    
+
+    // if the flag is not true then push the element of secondData to result array
+    if (!isExist) {
+      result.push(secondData[i]);
     }
-  }  
-  return result
+  }
+  
+  return result;
 }
 console.log(arrayMerge(['baldur', 'thor', 'loki'], ['loki, thor, baldur']))
 // console.log(arrayMerge(['hwoarang'], []))
