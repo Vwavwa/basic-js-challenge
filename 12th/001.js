@@ -19,8 +19,25 @@ Dilarang menggunakan built-in function:
 - .split()
 - .join()
 */
-function reverseEven(arr){
-   
+
+/*
+
+*/
+function reverseEven(arr) {
+    let result = []
+    for (let i = 0; i < arr.length; i++) {
+        if (i % 2 == 0) {
+            var strTemp = ''
+            for (let j = arr[i].length -1; j >= 0; j--) {
+                strTemp += arr[i][j]
+            }
+            result.push(strTemp)
+        }
+        else {
+            result.push(arr[i])
+        }
+    }
+    return result
 }
 
 console.log(reverseEven(['clinkz', 'jahrakal', 'kael']));
