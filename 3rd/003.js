@@ -53,6 +53,7 @@ function round(data) {
   let result = Math.round(data * 100) / 100;
   return result
 }
+
 function kali(operand1, operand2) {
   let result = 0
   result = operand1 * operand2
@@ -77,7 +78,6 @@ function bagi(operand1, operand2) {
   let rounded = round(result)
   return rounded
 }
-
 
 function calculate(input) {
   let result = []

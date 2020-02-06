@@ -23,13 +23,23 @@ Output yang diharapkan adalah Object Literal seperti contoh berikut:
   - `products`: []
   - output: 'Empty data'
 
-# Aturan coding
+# Aturan codingbaru dengan
 - WAJIB menggunakan WHILE / FOR loop
 
 */
 
 function productCategories(products) {
-  
+  let result = {}
+  for (let i = 0; i < products.length; i++) {
+    if(result[products[i][2]] == undefined){
+      result[products[i][2]] = 0
+      result[products[i][2]] += 1
+    }
+    else {
+      result[products[i][2]] += 1
+    }
+  }
+  return result
 }
 console.log(productCategories([
   ['Mouse Logitech', 150000, 'Mouse'],
@@ -37,7 +47,7 @@ console.log(productCategories([
   ['NVIDIA Card', 760000, 'Graphic Card'],
   ['Samsung Harddisk 1TB', 1300000, 'Harddisk'],
 ]));
-// { Mouse: 1, 'Graphic Card': 2, Harddisk: 1 }
+// { Mouse: 1, Graphic Card: 2, Harddisk: 1 }
 
 console.log(productCategories([
   ['Cooler Master MasterNotepal Maker', 720000, 'Cooler'],
@@ -47,5 +57,5 @@ console.log(productCategories([
 ]));
 // { Cooler: 4 }
 
-console.log(productCategories([]));
-// Empty data
+// console.log(productCategories([]));
+// // Empty data
